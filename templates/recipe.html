@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+        {% if image %}
+        <img src="{{ image }}" alt="{{ title }}">
+        {% endif %}
+        <h2>Ingredients:</h2>
+        <ul>
+            {% for ingredient in ingredients %}
+            <li>{{ ingredient }}</li>
+            {% endfor %}
+        </ul>
+        <h2>Instructions:</h2>
+        <ol>
+            {% for step in instructions %}
+            <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+        <a href="/">Search Another Recipe</a>
+    </div>
+</body>
+</html>
